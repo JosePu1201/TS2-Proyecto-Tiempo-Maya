@@ -40,6 +40,6 @@ $uinal = $row['nombre'];
 
 $fecha_haab = strval($dia);
 $simbolo_haab = $uinal;
-/*return $uinal.strval($dia);*/
+return $uinal.strval($dia);
 
 ?>

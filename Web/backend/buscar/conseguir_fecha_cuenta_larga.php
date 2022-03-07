@@ -68,6 +68,12 @@ if ($number4 > 19) {
 }
 $number5=12+$pivot;
 
+$fecha_baktun = $number5;
+$fecha_katun = $number4;
+$fecha_tun = $number3;
+$fecha_uinal = $number2;
+$fecha_kin = $number1;
+
 return strval($number5).".".strval($number4).".".strval($number3).".".strval($number2).".".strval($number1);
 
 ?>

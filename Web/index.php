@@ -13,7 +13,12 @@ $energia = include 'backend/buscar/conseguir_energia_numero.php';
 include 'backend/buscar/conseguir_uinal_nombre.php';
 $haab = $simbolo_haab;
 $dia_haab = $fecha_haab;
-$cuenta_larga = include 'backend/buscar/conseguir_fecha_cuenta_larga.php';
+include 'backend/buscar/conseguir_fecha_cuenta_larga.php';
+$baktun = $fecha_baktun;
+$katun = $fecha_katun;
+$tun = $fecha_tun;
+$uinal_day = $fecha_uinal;
+$kin_day = $fecha_kin;
 $cholquij = $nahual; /*. " " . strval($energia);*/
 $energia_dia = strval($energia);
 
@@ -39,24 +44,26 @@ $energia_dia = strval($energia);
  <div>
  <section id="inicio">
     <div id="inicioContainer" class="inicio-container" >
-      <br><br><h1>Bienvenido al Tiempo Maya</h1>
-      <table class="table">
+      <br><br><br><br><br><br> <h1>Bienvenido al Tiempo Maya</h1>
+      <table class="">
+        
+        <tbody>
         <tr>
           <th></th>
           <th>
-            <div id='formulario' style="padding: 15px; width: auto;">
+            <div id='formulario' style="padding: 4px; width: auto;">
               <label style="color: whitesmoke;"><?php echo isset($fecha_consultar) ? $fecha_consultar : ''; ?></label>
             </div>
           </th>
           <th></th>
         </tr>
-        <tbody>
+        
           <!--  calendario haab-->
           <tr>
-            <th scope="col">
+            <th >
               <div id='formulario' style="padding: 15px; width: auto;">
                 <h4 style="color: whitesmoke;">Calendario Haab</h4>
-                <table class="table">
+                <table>
                   <thead>
                     <tr>
                       <th scope="col">
@@ -70,10 +77,10 @@ $energia_dia = strval($energia);
                   <tbody>
                     <tr>
                       <th scope="row"> 
-                        <?php echo $dia_haab; ?>
+                        <?php echo "<label style=\"color: whitesmoke;\"> " . $dia_haab . "</label>";  ?>
                       </th>
                       <td>
-                        <?php echo $haab; ?>
+                        <?php echo "<label style=\"color: whitesmoke;\"> " . $haab . "</label>";  ?>
                       </td>
                    </tr>
                   </tbody>
@@ -84,7 +91,7 @@ $energia_dia = strval($energia);
             <th scope="col">
               <div id='formulario' style="padding: 15px; width: auto;">
                 <h4 style="color: whitesmoke;">Calendario Cholquij </h4>
-                <table class="table">
+                <table>
                   <thead>
                     <tr>
                       <th scope="col">
@@ -98,10 +105,10 @@ $energia_dia = strval($energia);
                   <tbody>
                     <tr>
                       <th scope="row"> 
-                        <?php echo $energia_dia; ?>
+                        <?php echo "<label style=\"color: whitesmoke;\"> " . $energia_dia . "</label>"; ?>
                       </th>
                       <td>
-                        <?php echo $cholquij; ?>
+                        <?php echo "<label style=\"color: whitesmoke;\"> " . $cholquij . "</label>"; ?>
                       </td>
                    </tr>
                   </tbody>
@@ -112,10 +119,79 @@ $energia_dia = strval($energia);
             <!--  cuenta larga -->
             <th scope="col">
               <div id='formulario' style="padding: 15px; width: auto;">
-                <h5 style="color: whitesmoke;">Calendario Haab : <?php echo isset($haab) ? $haab : ''; ?></h5>
-                <h5 style="color: whitesmoke;">Calendario Cholquij : <?php echo isset($cholquij) ? $energia1 : ''; ?></h5>
-                <h5 style="color: whitesmoke;">Cuenta Larga : <?php echo isset($cuenta_larga) ? $cuenta_larga : ''; ?></h5>
-                <label style="color: whitesmoke;"><?php echo isset($fecha_consultar) ? $fecha_consultar : ''; ?></label>
+                <h4 style="color: whitesmoke;">Cuenta Larga </h4>
+                <table>
+                    <tr>
+                      <th scope="col">
+                        <?php echo "<img src=\"./imgs//numeros/" . $baktun . ".jpg\" alt='' width='40' height='40' >"; ?>
+                      </th>
+                      <th scope="col"> 
+                        <?php echo "<img src=\"./imgs//cuenta_larga/baktun.jpg\" alt='K' width='40' height='40'>"; ?>
+                      </th>
+                      <th scope="col"> 
+                        <?php echo "<label style=\"color: whitesmoke;\"> " . $baktun . "</label>"; ?>
+                      </th>
+                      <td>
+                        <?php echo "<label style=\"color: whitesmoke;\"> Baktún</label>"; ?>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="col">
+                        <?php echo "<img src=\"./imgs//numeros/" . $katun . ".jpg\" alt='' width='40' height='40' >"; ?>
+                      </th>
+                      <th scope="col"> 
+                        <?php echo "<img src=\"./imgs//cuenta_larga/katun.jpg\" alt='K' width='40' height='40'>"; ?>
+                      </th>
+                      <th scope="col"> 
+                        <?php echo "<label style=\"color: whitesmoke;\"> " . $katun . "</label>"; ?>
+                      </th>
+                      <td>
+                        <?php echo "<label style=\"color: whitesmoke;\"> Katún</label>"; ?>
+                      </td>
+                   </tr>
+                   <tr>
+                      <th scope="col">
+                        <?php echo "<img src=\"./imgs//numeros/" . $tun . ".jpg\" alt='' width='40' height='40' >"; ?>
+                      </th>
+                      <th scope="col"> 
+                        <?php echo "<img src=\"./imgs//cuenta_larga/tun.jpg\" alt='K' width='40' height='40'>"; ?>
+                      </th>
+                      <th scope="col"> 
+                        <?php echo "<label style=\"color: whitesmoke;\"> " . $tun . "</label>"; ?>
+                      </th>
+                      <td>
+                        <?php echo "<label style=\"color: whitesmoke;\"> Tun</label>"; ?>
+                      </td>
+                   </tr>
+                   <tr>
+                      <th scope="col">
+                        <?php echo "<img src=\"./imgs//numeros/" . $uinal_day . ".jpg\" alt='' width='40' height='40' >"; ?>
+                      </th>
+                      <th scope="col"> 
+                        <?php echo "<img src=\"./imgs//cuenta_larga/uinal.jpg\" alt='K' width='40' height='40'>"; ?>
+                      </th>
+                      <th scope="col"> 
+                        <?php echo "<label style=\"color: whitesmoke;\"> " . $uinal_day . "</label>"; ?>
+                      </th>
+                      <td>
+                        <?php echo "<label style=\"color: whitesmoke;\"> Uinal</label>"; ?>
+                      </td>
+                   </tr>
+                   <tr>
+                      <th scope="col">
+                        <?php echo "<img src=\"./imgs//numeros/" . $kin_day . ".jpg\" alt='' width='40' height='40' >"; ?>
+                      </th>
+                      <th scope="col"> 
+                        <?php echo "<img src=\"./imgs//cuenta_larga/kin.jpg\" alt='K' width='40' height='40'>"; ?>
+                      </th>
+                      <th scope="col"> 
+                        <?php echo "<label style=\"color: whitesmoke;\"> " . $kin_day . "</label>"; ?>
+                      </th>
+                      <td>
+                        <?php echo "<label style=\"color: whitesmoke;\"> Kin </label>"; ?>
+                      </td>
+                   </tr>
+                </table>
               </div>
             </th>
           </tr>
