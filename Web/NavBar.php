@@ -11,8 +11,8 @@ $periodosNav = $conn->query("SELECT nombre FROM tiempo_maya.periodo order by ord
 <?php include "mensaje.php"; ?>
 
 
-<header id="header" style="padding-left: 200px; overflow: hidden;">
-  <div class="container" style="padding-left: 200px; overflow: hidden;">
+<header id="header" style="padding-left: 200px;">
+  <div class="container" style="padding-left: 200px;">
     <nav class="navbar navbar-expand-lg" id="nav-menu-container">
       <div class="container-fluid">
         <a id="title" class="navbar-brand" href="index.php" style="color: white;font-size: 24px;"><strong>TIEMPO</strong> MAYA</a>
