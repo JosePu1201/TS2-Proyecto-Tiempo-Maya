@@ -44,7 +44,8 @@ $energia_dia = strval($energia);
  <div>
  <section id="inicio">
     <div id="inicioContainer" class="inicio-container" >
-      <br><br><br><br><br><br> <h1>Bienvenido al Tiempo Maya</h1>
+      <br><br><br><br><br><br>
+      <h1>Bienvenido al Tiempo Maya</h1>
       <table class="">
         
         <tbody>
@@ -67,10 +68,10 @@ $energia_dia = strval($energia);
                   <thead>
                     <tr>
                       <th scope="col">
-                        <?php echo "<img src=\"./imgs//numeros/" . $dia_haab . ".jpg\" alt='' width='100' height='100'>"; ?>
+                        <?php echo "<img src=\"./imgs//numeros/" . $dia_haab . ".jpg\" alt='' width='120' height='100'>"; ?>
                       </th>
                       <th scope="col">
-                        <?php echo "<a class='nav-link' href='models/paginaModeloElemento.php?elemento=uinal#" . $haab . "'> <img src=\"./imgs//imagenesWinales/" . $haab . ".png\" alt='K' width='100' height='100'> </a>"; ?>
+                        <?php echo "<a class='nav-link' href='models/paginaModeloElemento.php?elemento=uinal#" . $haab . "'> <img src=\"./imgs//imagenesWinales/" . $haab . ".png\" alt='K' width='120' height='100'> </a>"; ?>
                       </th>
                     </tr>
                   </thead>
@@ -95,10 +96,10 @@ $energia_dia = strval($energia);
                   <thead>
                     <tr>
                       <th scope="col">
-                        <?php echo "<img src=\"./imgs//numeros/" . $energia_dia . ".jpg\" alt='' width='100' height='100' >"; ?>
+                        <?php echo "<img src=\"./imgs//numeros/" . $energia_dia . ".jpg\" alt='' width='120' height='100' >"; ?>
                       </th>
                       <th scope="col"> 
-                        <?php echo "<a class='nav-link' href='models/paginaModeloElemento.php?elemento=nahual#" . $cholquij . "'> <img src=\"./imgs//imagenesNahuales/" . $cholquij . ".jpg\" alt='K' width='100' height='100'> </a>"; ?>
+                        <?php echo "<a class='nav-link' href='models/paginaModeloElemento.php?elemento=nahual#" . $cholquij . "'> <img src=\"./imgs//imagenesNahuales/" . $cholquij . ".jpg\" alt='K' width='120' height='100'> </a>"; ?>
                       </th>
                     </tr>
                   </thead>
@@ -123,10 +124,10 @@ $energia_dia = strval($energia);
                 <table>
                     <tr>
                       <th scope="col">
-                        <?php echo "<img src=\"./imgs//numeros/" . $baktun . ".jpg\" alt='' width='40' height='40' >"; ?>
+                        <?php echo "<img src=\"./imgs//numeros/" . $baktun . ".jpg\" alt='' width='50' height='40' >"; ?>
                       </th>
                       <th scope="col"> 
-                        <?php echo "<img src=\"./imgs//cuenta_larga/baktun.jpg\" alt='K' width='40' height='40'>"; ?>
+                        <?php echo "<img src=\"./imgs//cuenta_larga/baktun.jpg\" alt='K' width='50' height='40'>"; ?>
                       </th>
                       <th scope="col"> 
                         <?php echo "<label style=\"color: whitesmoke;\"> " . $baktun . "</label>"; ?>
@@ -137,10 +138,10 @@ $energia_dia = strval($energia);
                     </tr>
                     <tr>
                       <th scope="col">
-                        <?php echo "<img src=\"./imgs//numeros/" . $katun . ".jpg\" alt='' width='40' height='40' >"; ?>
+                        <?php echo "<img src=\"./imgs//numeros/" . $katun . ".jpg\" alt='' width='50' height='40' >"; ?>
                       </th>
                       <th scope="col"> 
-                        <?php echo "<img src=\"./imgs//cuenta_larga/katun.jpg\" alt='K' width='40' height='40'>"; ?>
+                        <?php echo "<img src=\"./imgs//cuenta_larga/katun.jpg\" alt='K' width='50' height='40'>"; ?>
                       </th>
                       <th scope="col"> 
                         <?php echo "<label style=\"color: whitesmoke;\"> " . $katun . "</label>"; ?>
@@ -151,10 +152,10 @@ $energia_dia = strval($energia);
                    </tr>
                    <tr>
                       <th scope="col">
-                        <?php echo "<img src=\"./imgs//numeros/" . $tun . ".jpg\" alt='' width='40' height='40' >"; ?>
+                        <?php echo "<img src=\"./imgs//numeros/" . $tun . ".jpg\" alt='' width='50' height='40' >"; ?>
                       </th>
                       <th scope="col"> 
-                        <?php echo "<img src=\"./imgs//cuenta_larga/tun.jpg\" alt='K' width='40' height='40'>"; ?>
+                        <?php echo "<img src=\"./imgs//cuenta_larga/tun.jpg\" alt='K' width='50' height='40'>"; ?>
                       </th>
                       <th scope="col"> 
                         <?php echo "<label style=\"color: whitesmoke;\"> " . $tun . "</label>"; ?>
@@ -165,10 +166,10 @@ $energia_dia = strval($energia);
                    </tr>
                    <tr>
                       <th scope="col">
-                        <?php echo "<img src=\"./imgs//numeros/" . $uinal_day . ".jpg\" alt='' width='40' height='40' >"; ?>
+                        <?php echo "<img src=\"./imgs//numeros/" . $uinal_day . ".jpg\" alt='' width='50' height='40' >"; ?>
                       </th>
                       <th scope="col"> 
-                        <?php echo "<img src=\"./imgs//cuenta_larga/uinal.jpg\" alt='K' width='40' height='40'>"; ?>
+                        <?php echo "<img src=\"./imgs//cuenta_larga/uinal.jpg\" alt='K' width='50' height='40'>"; ?>
                       </th>
                       <th scope="col"> 
                         <?php echo "<label style=\"color: whitesmoke;\"> " . $uinal_day . "</label>"; ?>
@@ -179,10 +180,10 @@ $energia_dia = strval($energia);
                    </tr>
                    <tr>
                       <th scope="col">
-                        <?php echo "<img src=\"./imgs//numeros/" . $kin_day . ".jpg\" alt='' width='40' height='40' >"; ?>
+                        <?php echo "<img src=\"./imgs//numeros/" . $kin_day . ".jpg\" alt='' width='50' height='40' >"; ?>
                       </th>
                       <th scope="col"> 
-                        <?php echo "<img src=\"./imgs//cuenta_larga/kin.jpg\" alt='K' width='40' height='40'>"; ?>
+                        <?php echo "<img src=\"./imgs//cuenta_larga/kin.jpg\" alt='K' width='50' height='40'>"; ?>
                       </th>
                       <th scope="col"> 
                         <?php echo "<label style=\"color: whitesmoke;\"> " . $kin_day . "</label>"; ?>
