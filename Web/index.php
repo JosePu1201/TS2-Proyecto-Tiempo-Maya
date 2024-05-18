@@ -19,8 +19,27 @@ $katun = $fecha_katun;
 $tun = $fecha_tun;
 $uinal_day = $fecha_uinal;
 $kin_day = $fecha_kin;
-$cholquij = $nahual; /*. " " . strval($energia);*/
+$cholquij = $nahual;
 $energia_dia = strval($energia);
+
+date_default_timezone_set('US/Central'); // Asegúrate de ajustar la zona horaria según tu ubicación
+$hour = 8; // Hora en formato de 24 horas (00-23)
+
+// Determina la imagen de fondo según la hora
+if ($hour >= 5 && $hour < 7) {
+  $backgroundImage = 'Amanecer.jpg'; // Mañana
+} else if ($hour >= 7 && $hour< 11) {
+  $backgroundImage = 'manana.jpg'; // Tarde
+} else if ($hour >= 11 && $hour < 14) {
+  $backgroundImage = 'mediodia.jpg';} // Atardecer
+  else if ($hour >= 14 && $hour < 17) {
+  $backgroundImage = 'tarde.jpg';
+} 
+else if ($hour >= 17 && $hour < 19) {
+  $backgroundImage = 'atardecer.jpg';
+}else {
+  $backgroundImage = 'noche.jpg'; // Noche
+}
 
 ?>
 <!DOCTYPE html>
@@ -32,22 +51,25 @@ $energia_dia = strval($energia);
   <?php include "blocks/bloquesCss.html"?>
   <link rel="stylesheet" href="css/estilo.css?v=<?php echo (rand()); ?>" />
   <link rel="stylesheet" href="css/estiloAdmin.css?v=<?php echo (rand()); ?>" />
-
-    <link rel="stylesheet" href="css/index.css?v=<?php echo (rand()); ?>" />
-
-
+  <link rel="stylesheet" href="css/index.css?v=<?php echo (rand()); ?>" />
+  <style>
+    #inicio {
+      width: 100%;
+      height: 100vh;
+      background: url(img/<?php echo $backgroundImage; ?>) top center;
+      background-size: cover;
+      position: relative;
+    }
+  </style>
 </head>
-
 <body>
-
 <?php include "NavBar.php"?>
- <div>
- <section id="inicio">
-    <div id="inicioContainer" class="inicio-container" >
+<div>
+  <section id="inicio">
+    <div id="inicioContainer" class="inicio-container">
       <br><br><br><br><br><br>
       <h1>Bienvenido al Tiempo Maya</h1>
       <table class="">
-        
         <tbody>
         <tr>
           <th></th>
@@ -58,7 +80,6 @@ $energia_dia = strval($energia);
           </th>
           <th></th>
         </tr>
-        
           <!--  calendario haab-->
           <tr>
             <th >
@@ -86,7 +107,7 @@ $energia_dia = strval($energia);
                    </tr>
                   </tbody>
                 </table>
-              </div> <?php /* echo "<li class='nav-item'><a class='nav-link' href='models/paginaModeloElemento.php?elemento=kin#" . $kin['nombre'] . "'>" . $kin['nombre'] . "</a></li>"; */ ?>
+              </div>
             </th>
           <!--  calendario cholquij-->
             <th scope="col">
@@ -116,7 +137,6 @@ $energia_dia = strval($energia);
                 </table>
               </div>
             </th>
-
             <!--  cuenta larga -->
             <th scope="col">
               <div id='formulario' style="padding: 15px; width: auto;">
@@ -198,13 +218,41 @@ $energia_dia = strval($energia);
           </tr>
         </tbody>
       </table>
-
     </div>
   </section>
- </div>
+</div>
 
+<?php include "blocks/bloquesJs1.html"?>
 
-  <?php include "blocks/bloquesJs1.html"?>
+<script>
+// Función para actualizar la imagen de fondo según la hora actual
+function updateBackgroundImage() {
+  const hour = new Date().getHours(); // Obtiene la hora actual
+  let backgroundImage = '';
 
+  if (hour >= 5 && hour < 7) {
+    backgroundImage = 'img/Amanecer.jpg'; // Mañana
+  } else if (hour >= 7 && hour < 11) {
+    backgroundImage = 'img/manana.jpg'; // Tarde
+  } else if (hour >= 11 && hour < 14) {
+    backgroundImage = 'img/mediodia.jpg';} // Atardecer
+    else if (hour >= 14 && hour < 17) {
+    backgroundImage = 'img/tarde.jpg';
+  } 
+  else if (hour >= 17 && hour < 19) {
+    backgroundImage = 'img/atardecer.jpg';
+  }else {
+    backgroundImage = 'img/noche.jpg'; // Noche
+  }
+
+  document.getElementById('inicio').style.backgroundImage = `url(${backgroundImage})`;
+}
+
+// Actualiza la imagen de fondo al cargar la página
+updateBackgroundImage();
+
+// Configura un intervalo para actualizar la imagen de fondo cada hora
+setInterval(updateBackgroundImage, 3600000); // 3600000 ms = 1 hora
+</script>
 </body>
 </html>

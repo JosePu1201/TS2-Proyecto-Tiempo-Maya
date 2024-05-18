@@ -1,7 +1,7 @@
 <?php
-$servername = "127.0.0.1";
-$username_DB = "admin_tiempo_maya";
-$password_DB = "tiempo+Maya_2022";
+$servername = "localhost";
+$username_DB = "root";
+$password_DB = "";
 $dbname = "tiempo_maya";
 
 // Create connection

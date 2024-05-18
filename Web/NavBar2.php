@@ -5,7 +5,7 @@ $kinesNav = $conn->query("SELECT nombre FROM tiempo_maya.kin order by nombre;");
 $uinalesNav = $conn->query("SELECT nombre FROM tiempo_maya.uinal order by nombre;");
 $nahualesNav = $conn->query("SELECT nombre FROM tiempo_maya.nahual order by nombre;");
 $energiasNav = $conn->query("SELECT nombre FROM tiempo_maya.energia order by id;");
-$periodosNav = $conn->query("SELECT nombre FROM tiempo_maya.periodo order by orden ;");
+//$periodosNav = $conn->query("SELECT nombre FROM tiempo_maya.periodo order by orden ;");
 
 ?>
 <?php include "../mensaje.php"; ?>
