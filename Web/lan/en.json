@@ -1,0 +1,24 @@
+{
+    "title": "Mayan Time",
+    "welcome": "Welcome to Mayan Time",
+    "haab_calendar": "Haab Calendar",
+    "cholquij_calendar": "Cholquij Calendar",
+    "long_count": "Long Count",
+    "baktun": "Baktun",
+    "katun": "Katun",
+    "tun": "Tun",
+    "uinal": "Uinal",
+    "kin": "Kin",
+    "navbar": {
+        "home": "TIME",
+        "calendar_haab": "Haab Calendar",
+        "calendar_cholquij": "Cholquij Calendar",
+        "nahual": "Nahual",
+        "uinal": "Uinal",
+        "kin": "Kin",
+        "energia": "Energy",
+        "rueda_calendarica": "Calendar Wheel",
+        "calculadora": "Calculator",
+        "calendario_gregoriano": "Gregorian Calendar"
+    }
+}

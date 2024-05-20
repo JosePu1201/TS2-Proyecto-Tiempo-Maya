@@ -21,15 +21,13 @@ $uinal_day = $fecha_uinal;
 $kin_day = $fecha_kin;
 $cholquij = $nahual;
 $energia_dia = strval($energia);
-
-
-
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Tiempo Maya</title>
+  <title id="page-title">Tiempo Maya</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <?php include "blocks/bloquesCss.html"?>
   <link rel="stylesheet" href="css/estilo.css?v=<?php echo (rand()); ?>" />
@@ -43,15 +41,18 @@ $energia_dia = strval($energia);
       background-size: cover;
       position: relative;
     }
+
+
   </style>
 </head>
 <body>
+
 <?php include "NavBar.php"?>
 <div>
   <section id="inicio">
     <div id="inicioContainer" class="inicio-container">
       <br><br><br><br><br><br>
-      <h1>Bienvenido al Tiempo Maya</h1>
+      <h1 id="welcome-message">Bienvenido al Tiempo Maya</h1>
       <table class="">
         <tbody>
         <tr>
@@ -67,7 +68,7 @@ $energia_dia = strval($energia);
           <tr>
             <th >
               <div id='formulario' style="padding: 15px; width: auto;">
-                <h4 style="color: whitesmoke;">Calendario Haab</h4>
+                <h4 id="haab-calendar" style="color: whitesmoke;">Calendario Haab</h4>
                 <table>
                   <thead>
                     <tr>
@@ -95,7 +96,7 @@ $energia_dia = strval($energia);
           <!--  calendario cholquij-->
             <th scope="col">
               <div id='formulario' style="padding: 15px; width: auto;">
-                <h4 style="color: whitesmoke;">Calendario Cholquij </h4>
+                <h4 id="cholquij-calendar" style="color: whitesmoke;">Calendario Cholquij </h4>
                 <table>
                   <thead>
                     <tr>
@@ -123,7 +124,7 @@ $energia_dia = strval($energia);
             <!--  cuenta larga -->
             <th scope="col">
               <div id='formulario' style="padding: 15px; width: auto;">
-                <h4 style="color: whitesmoke;">Cuenta Larga </h4>
+                <h4 id="long-count" style="color: whitesmoke;">Cuenta Larga </h4>
                 <table>
                     <tr>
                       <th scope="col">
@@ -136,7 +137,7 @@ $energia_dia = strval($energia);
                         <?php echo "<label style=\"color: whitesmoke;\"> " . $baktun . "</label>"; ?>
                       </th>
                       <td>
-                        <?php echo "<label style=\"color: whitesmoke;\"> Baktún</label>"; ?>
+                        <?php echo "<label style=\"color: whitesmoke;\" id='baktun-label'> Baktún</label>"; ?>
                       </td>
                     </tr>
                     <tr>
@@ -150,7 +151,7 @@ $energia_dia = strval($energia);
                         <?php echo "<label style=\"color: whitesmoke;\"> " . $katun . "</label>"; ?>
                       </th>
                       <td>
-                        <?php echo "<label style=\"color: whitesmoke;\"> Katún</label>"; ?>
+                        <?php echo "<label style=\"color: whitesmoke;\" id='katun-label'> Katún</label>"; ?>
                       </td>
                    </tr>
                    <tr>
@@ -164,8 +165,8 @@ $energia_dia = strval($energia);
                         <?php echo "<label style=\"color: whitesmoke;\"> " . $tun . "</label>"; ?>
                       </th>
                       <td>
-                        <?php echo "<label style=\"color: whitesmoke;\"> Tun</label>"; ?>
-                      </td>
+                        <?php echo "<label style=\"color: whitesmoke;\" id='tun-label'> Tun</label>"; ?>
+                      </th>
                    </tr>
                    <tr>
                       <th scope="col">
@@ -178,7 +179,7 @@ $energia_dia = strval($energia);
                         <?php echo "<label style=\"color: whitesmoke;\"> " . $uinal_day . "</label>"; ?>
                       </th>
                       <td>
-                        <?php echo "<label style=\"color: whitesmoke;\"> Uinal</label>"; ?>
+                        <?php echo "<label style=\"color: whitesmoke;\" id='uinal-label'> Uinal</label>"; ?>
                       </td>
                    </tr>
                    <tr>
@@ -192,8 +193,8 @@ $energia_dia = strval($energia);
                         <?php echo "<label style=\"color: whitesmoke;\"> " . $kin_day . "</label>"; ?>
                       </th>
                       <td>
-                        <?php echo "<label style=\"color: whitesmoke;\"> Kin </label>"; ?>
-                      </td>
+                        <?php echo "<label style=\"color: whitesmoke;\" id='kin-label'> Kin </label>"; ?>
+                      </th>
                    </tr>
                 </table>
               </div>
@@ -236,6 +237,11 @@ updateBackgroundImage();
 
 // Configura un intervalo para actualizar la imagen de fondo cada hora
 setInterval(updateBackgroundImage, 3600000); // 3600000 ms = 1 hora
+
+
+
+// Establecer idioma por defecto
+setLanguage('es');
 </script>
 </body>
 </html>

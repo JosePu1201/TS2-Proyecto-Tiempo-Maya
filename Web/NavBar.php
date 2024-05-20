@@ -114,3 +114,18 @@ $energiasNav = $conn->query("SELECT nombre FROM tiempo_maya.energia order by id;
 </header>
 
 
+<script type="text/javascript">
+  var relleno = false;
+
+  function rellenar() {
+    if (!relleno) {
+      $('#header').addClass('header-fixed1');
+      $('#inicioContainer').addClass('iniciofixed');
+      relleno = true
+    } else {
+      relleno = false
+      $('#header').removeClass('header-fixed1');
+      $('#inicioContainer').removeClass('iniciofixed');
+    }
+  }
+</script>

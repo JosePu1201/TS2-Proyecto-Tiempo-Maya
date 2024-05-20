@@ -1,0 +1,24 @@
+{
+    "title": "Temps Maya",
+    "welcome": "Bienvenue au Temps Maya",
+    "haab_calendar": "Calendrier Haab",
+    "cholquij_calendar": "Calendrier Cholquij",
+    "long_count": "Compte Long",
+    "baktun": "Baktun",
+    "katun": "Katun",
+    "tun": "Tun",
+    "uinal": "Uinal",
+    "kin": "Kin",
+    "navbar": {
+        "home": "TEMPS",
+        "calendar_haab": "Calendrier Haab",
+        "calendar_cholquij": "Calendrier Cholquij",
+        "nahual": "Nahual",
+        "uinal": "Uinal",
+        "kin": "Kin",
+        "energia": "Énergie",
+        "rueda_calendarica": "Roue Calendrier",
+        "calculadora": "Calculatrice",
+        "calendario_gregoriano": "Calendrier Grégorien"
+    }
+}

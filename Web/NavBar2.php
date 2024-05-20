@@ -103,7 +103,7 @@ $energiasNav = $conn->query("SELECT nombre FROM tiempo_maya.energia order by id;
             </li>
             
             <li class="nav-item"><a class="nav-link" href="../calculadora.php">Calculadora</a></li>
-           
+            <li class="nav-item"><a class="nav-link" href="calendario.php">Calendario Gregoriano</a></li>
           </ul>
         </div>
       </div>
