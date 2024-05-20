@@ -1,4 +1,22 @@
 <?php session_start(); ?>
+<?php
+session_start();
+$conn = include "conexion/conexion.php";
+
+if(isset($_GET['fecha'])){
+    $fecha_consultar = $_GET['fecha'];
+} else {
+    date_default_timezone_set('US/Central');  
+    $fecha_consultar = date("Y-m-d");
+}
+
+$nahual = include 'backend/buscar/conseguir_nahual_nombre.php';
+$energia = include 'backend/buscar/conseguir_energia_numero.php';
+$haab = include 'backend/buscar/conseguir_uinal_nombre.php';
+$cuenta_larga = include 'backend/buscar/conseguir_fecha_cuenta_larga.php';
+$cholquij = $nahual . " " . strval($energia);
+?>
+
 <?php 
 $conn = include "conexion/conexion.php";
 
@@ -79,7 +97,7 @@ $cholquij = $nahual." ". strval($energia);
 
 
     <?php include "blocks/bloquesJs1.html" ?>
-
+   
 </body>
 
 </html>

@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.weekdays {
+    display: flex;
+    background-color: #faf7f7;
+}
+
+.weekdays div {
+    flex: 1;
+    padding: 15px; /* Aumentar el relleno */
+    text-align: center;
+    border-right: 1px solid #ccc;
+    font-size: 18px; /* Aumentar el tamaño de fuente */
+}
+
+.weekdays div:last-child {
+    border-right: none;
+}
+
+.days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day {
+    flex: 1 0 14.28%;
+    padding: 20px; /* Aumentar el relleno */
+    text-align: center;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 18px; /* Aumentar el tamaño de fuente */
+    font-weight: bold; /* Letra negrita */
+    font-style: italic; /* Letra cursiva */
+}
+
+.day.other-month {
+    color: #070707;
+}
+
+.day:nth-child(7n) {
+    border-right: none;
+}

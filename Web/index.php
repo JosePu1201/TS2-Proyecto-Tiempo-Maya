@@ -22,24 +22,7 @@ $kin_day = $fecha_kin;
 $cholquij = $nahual;
 $energia_dia = strval($energia);
 
-date_default_timezone_set('US/Central'); // Asegúrate de ajustar la zona horaria según tu ubicación
-$hour = 8; // Hora en formato de 24 horas (00-23)
 
-// Determina la imagen de fondo según la hora
-if ($hour >= 5 && $hour < 7) {
-  $backgroundImage = 'Amanecer.jpg'; // Mañana
-} else if ($hour >= 7 && $hour< 11) {
-  $backgroundImage = 'manana.jpg'; // Tarde
-} else if ($hour >= 11 && $hour < 14) {
-  $backgroundImage = 'mediodia.jpg';} // Atardecer
-  else if ($hour >= 14 && $hour < 17) {
-  $backgroundImage = 'tarde.jpg';
-} 
-else if ($hour >= 17 && $hour < 19) {
-  $backgroundImage = 'atardecer.jpg';
-}else {
-  $backgroundImage = 'noche.jpg'; // Noche
-}
 
 ?>
 <!DOCTYPE html>
