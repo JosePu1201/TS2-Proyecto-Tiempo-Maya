@@ -73,6 +73,15 @@
             width: 20px; /* Ajustar el ancho de la imagen */
             height: auto; /* Mantener la proporción de la imagen */
         }
+
+        .year-calendar {
+            display: none; /* Mantener oculto hasta la descarga */
+        }
+
+        .month-container {
+            margin: 10px;
+            page-break-after: always; /* Añadir salto de página después de cada mes */
+        }
     </style>
 </head>
 <body>
@@ -204,6 +213,46 @@
             </table>
         </div>
 
+        <!-- Contenedor oculto para el calendario completo del año -->
+        <div class="year-calendar" id="year-calendar">
+            <?php
+            function generateFullYearCalendar($year) {
+                for ($month = 1; $month <= 12; $month++) {
+                    $timestamp = mktime(0, 0, 0, $month, 1, $year);
+                    $dateFormatted = strftime("%B %Y", $timestamp);
+
+                    // Convertir a mayúsculas
+                    $dateFormattedUpper = mb_strtoupper($dateFormatted, 'UTF-8');
+                    echo '<div class="month-container">';
+                    echo '<div class="calendar">';
+                    echo '<div class="month">';
+                    echo '<h2>' . $dateFormattedUpper . '</h2>';
+
+                    echo '</div>';
+                    echo '<table>';
+                    echo '<thead>';
+                    echo '<tr>';
+                    echo '<th>Domingo</th>';
+                    echo '<th>Lunes</th>';
+                    echo '<th>Martes</th>';
+                    echo '<th>Miércoles</th>';
+                    echo '<th>Jueves</th>';
+                    echo '<th>Viernes</th>';
+                    echo '<th>Sábado</th>';
+                    echo '</tr>';
+                    echo '</thead>';
+                    echo '<tbody>';
+                    generateCalendar($month, $year);
+                    echo '</tbody>';
+                    echo '</table>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            }
+            generateFullYearCalendar($year);
+            ?>
+        </div>
+
         <!-- Botón para descargar la imagen -->
         <button id="download-btn">Descargar Calendario</button>
     </section>
@@ -259,18 +308,23 @@
 
         // Configura un intervalo para actualizar la imagen de fondo cada hora
         setInterval(updateBackgroundImage, 3600000); // 3600000 ms = 1 hora
-    });
 
-    document.getElementById("download-btn").addEventListener("click", function() {
-        html2canvas(document.getElementById("calendar"), {
-            onrendered: function(canvas) {
-                var link = document.createElement("a");
-                document.body.appendChild(link);
-                link.download = "calendario.jpg";
-                link.href = canvas.toDataURL("image/jpeg");
-                link.target = '_blank';
-                link.click();
-            }
+        document.getElementById("download-btn").addEventListener("click", function() {
+            // Mostrar el contenedor de año antes de la captura
+            document.getElementById("year-calendar").style.display = "block";
+            // Usar html2canvas para capturar el contenedor
+            html2canvas(document.getElementById("year-calendar"), {
+                onrendered: function(canvas) {
+                    var link = document.createElement("a");
+                    document.body.appendChild(link);
+                    link.download = "calendario_completo.jpg";
+                    link.href = canvas.toDataURL("image/jpeg");
+                    link.target = '_blank';
+                    link.click();
+                    // Ocultar el contenedor de nuevo después de la captura
+                    document.getElementById("year-calendar").style.display = "none";
+                }
+            });
         });
     });
     </script>

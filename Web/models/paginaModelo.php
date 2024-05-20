@@ -1,14 +1,9 @@
-<?php session_start(); ?>
 <?php
-
 $conn = include '../conexion/conexion.php';
 $pagina = $_GET['pagina'];
 $informacion = $conn->query("SELECT htmlCodigo,seccion,nombre FROM tiempo_maya.pagina WHERE categoria='" . $pagina . "' order by orden;");
 $secciones = $conn->query("SELECT seccion FROM tiempo_maya.pagina WHERE categoria='" . $pagina . "' group by seccion  order by orden;");
 $elementos = $conn->query("SELECT nombre FROM tiempo_maya.pagina WHERE categoria='" . $pagina . "' AND nombre!='Informacion' AND seccion!='Informacion' order by orden;");
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -21,15 +16,22 @@ $elementos = $conn->query("SELECT nombre FROM tiempo_maya.pagina WHERE categoria
     <?php include "../blocks/bloquesCss.html" ?>
     <link rel="stylesheet" href="../css/estilo.css?v=<?php echo (rand()); ?>" />
     <link rel="stylesheet" href="../css/paginaModelo.css?v=<?php echo (rand()); ?>" />
-
-
+    <style>
+        #inicio {
+            width: 100%;
+            height: 100vh;
+            background: url('../img/Amanecer.jpg') top center no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        
+    </style>
 </head>
 <?php include "../NavBar2.php" ?>
 
 <body>
     <section id="inicio">
         <div id="inicioContainer" class="inicio-container">
-
             <?php echo "<h1>" . $pagina . " </h1>";
             foreach ($secciones as $seccion) {
                 echo " <a href='#" . $seccion['seccion'] . "' class='btn-get-started'>" . $seccion['seccion'] . "</a>";
@@ -39,14 +41,11 @@ $elementos = $conn->query("SELECT nombre FROM tiempo_maya.pagina WHERE categoria
     </section>
 
     <?php
-
-
     foreach ($secciones as $seccion) {
         $stringPrint = "<section id='" . $seccion['seccion'] . "'> <div class='container'> <div class='section-header'><h3 class='section-title'>" . $seccion['seccion'] . " </h3> </div>";
         foreach ($informacion as $info) {
             if ($seccion['seccion'] == $info['seccion']) {
                 if ($info['seccion'] != "Informacion") {
-
                     $stringPrint .= "<h2><a href='paginaModeloElemento.php?elemento=" . $info['nombre'] . "'/>" . $info['nombre'] . " </a></h2>";
                 }
                 $stringPrint .= "<hr>";
@@ -71,18 +70,8 @@ $elementos = $conn->query("SELECT nombre FROM tiempo_maya.pagina WHERE categoria
         $stringPrint .= "</div> </section> <hr>";
         echo $stringPrint;
     }
-
     ?>
 
-
-
-
-
     <?php include "../blocks/bloquesJs.html" ?>
-
-
-
-
 </body>
-
 </html>

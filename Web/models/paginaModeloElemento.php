@@ -6,7 +6,6 @@ session_start(); ?>
 <?php
 
 $conn = include '../conexion/conexion.php';
-include './Energia.php';
 $tabla = $_GET['elemento'];
 $table =strtolower($tabla);
 $datos = $conn->query("SELECT nombre,significado,htmlCodigo FROM tiempo_maya." . $table . ";");
@@ -27,7 +26,16 @@ $informacion = $conn->query("SELECT htmlCodigo FROM tiempo_maya.pagina WHERE nom
     <?php include "../blocks/bloquesCss.html" ?>
     <link rel="stylesheet" href="../css/estilo.css?v=<?php echo (rand()); ?>" />
     <link rel="stylesheet" href="../css/paginaModelo.css?v=<?php echo (rand()); ?>" />
-
+    <style>
+        #inicio {
+            width: 100%;
+            height: 100vh;
+            background: url('../img/Amanecer.jpg') top center no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        
+    </style>
 
 </head>
 <?php include "../NavBar2.php" ?>
@@ -59,32 +67,12 @@ $informacion = $conn->query("SELECT htmlCodigo FROM tiempo_maya.pagina WHERE nom
     
     <section id="elementos">
         <div class="container">
-            <div class="about-container">
+            <div class="row about-container">
                 <div class="section-header">
                     <h3 class="section-title">Elementos</h3>
                 </div>
                 <?php foreach($datos as $dato){
-                   $stringPrint = "<h4 id='".$dato['nombre']."'>".$dato['nombre']."</h4>  ";
-                   $wi = "../imgs/imagenesWinales/" . $dato['nombre'] . ".png";
-                   $na = "../imgs/imagenesNahuales/" . $dato['nombre'] . ".jpg";
-                   $kin = "../imgs/kines/" . $dato['nombre'] . ".jpg";
-                   
-                   $numero_energia = numero($dato['nombre']);
-                   $energ = "../imgs/numeros/" . $numero_energia . ".jpg";
-
-                   if(file_exists($wi)) {
-                    echo "<img src=\"../imgs/imagenesWinales/" . $dato['nombre'] . ".png\" alt='Winal' width='200' height='150' > ";
-                   } 
-                   if(file_exists($na)){
-                    echo "<img src=\"../imgs/imagenesNahuales/" . $dato['nombre'] . ".jpg\" alt='Nahual' width='200' height='150' > ";
-                   }
-                   if(file_exists($energ)){
-                    echo "<img src=\"../imgs/numeros/" . $numero_energia . ".jpg\" alt='Nahual' width='200' height='150' > ";
-                   }
-                   if(file_exists($kin)){
-                    echo "<img src=\"../imgs/kines/" . $dato['nombre'] . ".jpg\" alt='Nahual' width='200' height='150' > ";
-                   }
-                   
+                   $stringPrint = "<h4 id='".$dato['nombre']."'>".$dato['nombre']."</h4>";
                    $stringPrint.="<h5>Significado</h5> <p>".$dato['significado']."</p>";
                    $stringPrint.="<p>".$dato['htmlCodigo']."</p> <hr>";
                    echo $stringPrint;
